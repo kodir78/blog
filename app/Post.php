@@ -17,16 +17,16 @@ class Post extends Model
     public function getImageUrlAttribute($value)
     {
        //
-    $image_url = "";
+        $image_url = "";
 
-    if ( ! is_null($this->image))
-    {
+        if ( ! is_null($this->image))
+        {
         //$directory = config('cms.image.directory');
-        $imagePath = public_path() . "/img/" . $this->image;
-        if (file_exists($imagePath)) $image_url = asset("img/" . $this->image);
-    }
+            $imagePath = public_path() . "/img/" . $this->image;
+            if (file_exists($imagePath)) $image_url = asset("img/" . $this->image);
+        }
 
-    return $image_url;
+        return $image_url;
     }
 
     public function getDateAttribute($value)
@@ -42,6 +42,13 @@ class Post extends Model
     
     public function scopePublished($query)
     {
-         return $query->where("published_at", "<=", Carbon::now());
+       return $query->where("published_at", "<=", Carbon::now());
+   }
+
+   // SEO 
+   public function getRouteKeyName()
+   {
+    return 'slug';
     }
-}
+    
+ }

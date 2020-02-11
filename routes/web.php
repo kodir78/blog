@@ -21,3 +21,7 @@ Route::get('/blog/{post}', [
     'as' => 'blog.show'
 ]);
      
+
+Route::fallback(function () {
+    //
+});
