@@ -41,4 +41,10 @@ class User extends Authenticatable
     {
         return $this->hasMany(Post::class, 'author_id');
     }
+
+      // SEO 
+   public function getRouteKeyName()
+   {
+    return 'slug';
+    }
 }
