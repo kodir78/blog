@@ -12,4 +12,10 @@ class Category extends Model
     	# code..
     	return $this->hasMany(Post::class);
     }
+
+     // SEO 
+   public function getRouteKeyName()
+   {
+    return 'slug';
+    }
 }
