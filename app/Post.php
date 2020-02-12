@@ -14,6 +14,12 @@ class Post extends Model
     {
         return $this->belongsTo(User::class);
     }
+    // Relasi Category ke Post
+    public function category()
+    {
+        # code...
+        return $this->belongsTo(Category::class);
+    }
     public function getImageUrlAttribute($value)
     {
        //
