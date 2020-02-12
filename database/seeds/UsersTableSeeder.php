@@ -26,21 +26,21 @@ class UsersTableSeeder extends Seeder
                     'slug' => 'kodir-zaelani',
                     'email' => "kodir@test.com",
                     'password' => bcrypt('secret'),
-                   // 'bio' => $faker->text(rand(250, 300))
+                    'bio' => $faker->text(rand(250, 300))
                 ],
                 [
                     'name' => "Abdul Fattah",
                     'slug' => 'abdul-fattah',
                     'email' => "abdul@test.com",
                     'password' => bcrypt('secret'),
-                    //'bio' => $faker->text(rand(250, 300))
+                    'bio' => $faker->text(rand(250, 300))
                 ],
                 [
                     'name' => "Edo Masaru",
                     'slug' => 'edo-masaru',
                     'email' => "edo@test.com",
                     'password' => bcrypt('secret'),
-                   // 'bio' => $faker->text(rand(250, 300))
+                    'bio' => $faker->text(rand(250, 300))
                 ],
             ];
         }
