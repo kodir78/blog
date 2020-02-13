@@ -48,6 +48,9 @@ class BlogController extends Controller
     {
     	//die("ini show");
     	//$post = Post::findOrFail($slug);
+        // Menghitung jumlah pembaca, hal ini setiap browser di refresh maka akan bertambah, sebaiknya gunakan cara sessin atau catat ip address
+        $post->increment('view_count');
+        
     	return view('blog/show', compact('post'));
     }
 }
