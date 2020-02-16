@@ -79,4 +79,23 @@ class Post extends Model
     return 'slug';
     }
     
+    public function dateFormatted($showTimes = false)
+    {
+        $format = "d/m/Y";
+        if ($showTimes) $format = $format . " H:i:s";
+        return $this->created_at->format($format);
+    }
+
+    public function publicationLabel()
+    {
+        if ( ! $this->published_at) {
+            return '<span class="badge badge-warning">Draft</span>';
+        }
+        elseif ($this->published_at && $this->published_at->isFuture()) {
+            return '<span class="badge badge-info">Schedule</span>';
+        }
+        else {
+            return '<span class="badge badge-success">Published</span>';
+        }
+    }
  }
